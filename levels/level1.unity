@@ -9438,6 +9438,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2298d64690dff9478a5d0354924c957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementdistance: 3
+  speed: 5
   damage: 1
 --- !u!1 &1998942237
 GameObject:
