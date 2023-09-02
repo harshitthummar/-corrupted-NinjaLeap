@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
+    [Header ("Health")]
     [SerializeField] private float startinghealth;
     private Animator anim;
 
@@ -12,10 +11,16 @@ public class Health : MonoBehaviour
     public float currenthealth { get; private set; }
     private bool dead;
 
+    [Header("IFrames")]
+    [SerializeField] private float iframeduration;
+    [SerializeField] private int numberofflashes;
+    private SpriteRenderer spiterend;
+
     private void Awake()
     {
         currenthealth = startinghealth;
         anim = GetComponent<Animator>();
+        spiterend = GetComponent<SpriteRenderer>();
     }
 
     public void takedamage(float _damage)
@@ -28,6 +33,7 @@ public class Health : MonoBehaviour
         {
             //player damage
             anim.SetTrigger("hurt");
+            StartCoroutine(invlnerability());
         }
         else
         {
@@ -42,10 +48,24 @@ public class Health : MonoBehaviour
         }
     }
 
+   
     public void addhealth(float _value)
     {
         currenthealth = Mathf.Clamp(currenthealth + _value, 0, startinghealth);
     }
-  
+
+    private IEnumerator invlnerability()
+    {
+        Physics2D.IgnoreLayerCollision(10,11,true);
+        for (int i = 0; i < numberofflashes; i++)
+        {
+            spiterend.color = new Color(1, 0, 0, 0.5f);
+            yield return new WaitForSeconds(iframeduration / (numberofflashes * 2));
+            spiterend.color = Color.white;
+            yield return new WaitForSeconds(iframeduration / (numberofflashes * 2));
+        }
+
+        Physics2D.IgnoreLayerCollision(10, 11, false);
+    }
 
 }
