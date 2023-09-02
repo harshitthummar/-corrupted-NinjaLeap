@@ -10,7 +10,7 @@ public class enemy_damage : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            GetComponent<Health>().takedamage(damage);
+            collision.GetComponent<Health>().takedamage(damage);
         }
     }
 }
