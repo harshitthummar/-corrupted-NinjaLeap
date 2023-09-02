@@ -15,10 +15,16 @@ public class door : MonoBehaviour
             if (collision.transform.position.x < transform.position.x)
             {
                 cam.movetonewroom(nextroom);
-                new Vector3(0,transform.position.y,transform.position.z);
+                nextroom.GetComponent<room>().activeroom(true);
+                previousroom.GetComponent<room>().activeroom(false);
             }
             else
-                cam.movetonewroom(previousroom); 
+            {
+                cam.movetonewroom(previousroom);
+                nextroom.GetComponent<room>().activeroom(false);
+                previousroom.GetComponent<room>().activeroom(true);
+            }
+                 
         }
     }
 }
