@@ -24,7 +24,7 @@ public class door : room
             }
             else
             {
-                cam.movetonewroom(previousroom);
+                 cam.movetonewroom(previousroom);
               // previousroom.GetComponent<room>().activeroom(true);
               // nextroom.GetComponent<room>().activeroom(false);
               
