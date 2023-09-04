@@ -16,6 +16,8 @@ public class Health : MonoBehaviour
     [SerializeField] private int numberofflashes;
     private SpriteRenderer spiterend;
 
+    [Header("Components")]
+    [SerializeField] private Behaviour[] components;
     private void Awake()
     {
         currenthealth = startinghealth;
@@ -42,15 +44,21 @@ public class Health : MonoBehaviour
                 anim.SetTrigger("die");
 
                 //disable player after dead
-                if(GetComponent<playermovement>() != null)
-                    GetComponent<playermovement>().enabled = false;
+              // if(GetComponent<playermovement>() != null)
+                   // GetComponent<playermovement>().enabled = false;
                 
                 //disable enemy after kills player
-                if(GetComponentInParent<enemypetrol>() != null)
-                    GetComponentInParent<enemypetrol>().enabled = false;
+               // if(GetComponentInParent<enemypetrol>() != null)
+               //     GetComponentInParent<enemypetrol>().enabled = false;
 
-                if (GetComponent<melee_enemy>() != null)
-                    GetComponent<melee_enemy>().enabled = false;        
+               // if (GetComponent<melee_enemy>() != null)
+                   //  GetComponent<melee_enemy>().enabled = false;
+
+                //disable all at once
+                foreach (Behaviour component in components)
+                {
+                    component.enabled = false;
+                }
                 dead = true;
             }
             //player dead
