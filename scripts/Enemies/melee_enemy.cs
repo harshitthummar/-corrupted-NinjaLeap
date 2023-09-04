@@ -20,12 +20,14 @@ public class melee_enemy : MonoBehaviour
     //refrences
     private Health playerhealth;
     private Animator anim;
+    private enemypetrol enemypetrol;
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        enemypetrol = GetComponentInParent<enemypetrol>();
     }
-
+    
     private void Update()
     {
         cooldowntimer += Time.deltaTime;
@@ -40,6 +42,11 @@ public class melee_enemy : MonoBehaviour
                 cooldowntimer = 0;
                 anim.SetTrigger("meleeattack");
             }
+        }
+        //if you see the player stop petroling otherwise continue petroling
+        if(enemypetrol != null)
+        {
+            enemypetrol.enabled = !playerinsight(); 
         }
        
     }

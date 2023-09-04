@@ -16,13 +16,23 @@ public class enemypetrol : MonoBehaviour
     private Vector3 init;
     private bool movingleft;
 
+    [Header("Idle Behaviour")]
+    [SerializeField] private float idleduration;
+    private float idletimer;
+
+    [Header("enemy animator")]
+    [SerializeField] private Animator anim;
 
     private void Awake()
     {
         init = enemy.localScale;
     }
 
-
+    private void OnDisable()
+    {
+        anim.SetBool("moving", false);
+        
+    }
     private void Update()
     {
         if (movingleft)
@@ -53,12 +63,21 @@ public class enemypetrol : MonoBehaviour
     }
     private void directionchange()
     {
-        movingleft = !movingleft;
+        anim.SetBool("moving", false);
+        idletimer += Time.deltaTime;
+        if(idletimer > idleduration)
+        {
+          
+            movingleft = !movingleft;
+        }
+        
     }
 
 
     private void moveindirection(int _direction)
     {
+        idletimer = 0;
+        anim.SetBool("moving", true);
         //face the right direction 
         enemy.localScale = new Vector3(Mathf.Abs( init.x) * _direction, init.y, init.z);
 

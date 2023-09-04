@@ -1580,7 +1580,9 @@ MonoBehaviour:
   leftedge: {fileID: 882248708}
   rightedge: {fileID: 604221828}
   enemy: {fileID: 1670229170}
-  speed: 1
+  speed: 2.5
+  idleduration: 3
+  anim: {fileID: 1670229168}
 --- !u!1001 &419703680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7638,6 +7640,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7005341259082008481, guid: de4065a484ba8e44c9b9bd4bb3c2c610, type: 3}
   m_PrefabInstance: {fileID: 2143048409}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1670229168 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7487606303631120651, guid: b4e0d6c1a1e7dc045af7a27c60156719, type: 3}
+  m_PrefabInstance: {fileID: 7487606305249899963}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1670229170 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7487606303631120649, guid: b4e0d6c1a1e7dc045af7a27c60156719, type: 3}
@@ -10506,6 +10513,10 @@ PrefabInstance:
     - target: {fileID: 7487606303631120663, guid: b4e0d6c1a1e7dc045af7a27c60156719, type: 3}
       propertyPath: m_Name
       value: Melee enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7487606303631120663, guid: b4e0d6c1a1e7dc045af7a27c60156719, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4e0d6c1a1e7dc045af7a27c60156719, type: 3}
