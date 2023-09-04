@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 687658c4d410d514c8816c7651d98f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startinghealth: 2
-  iframeduration: 3
-  numberofflashes: 3
+  startinghealth: 3
+  iframeduration: 0
+  numberofflashes: 0
 --- !u!114 &7487606303631120662
 MonoBehaviour:
   m_ObjectHideFlags: 0
