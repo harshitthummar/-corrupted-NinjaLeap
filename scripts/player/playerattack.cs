@@ -10,6 +10,7 @@ public class playerattack : MonoBehaviour
     private float cooldowntimer = Mathf.Infinity;
     [SerializeField] private Transform firepoint;
     [SerializeField] private GameObject[] fireballs;
+    [SerializeField] private AudioClip fireballsound;
     private Animator anim;
     private playermovement playermovement;
 
@@ -31,6 +32,7 @@ public class playerattack : MonoBehaviour
 
     private void attack()
     {
+        soundmanager.instance.playsound(fireballsound);
         anim.SetTrigger("attack");
         cooldowntimer = 0;
         fireballs[Findfireball()].transform.position=firepoint.position;

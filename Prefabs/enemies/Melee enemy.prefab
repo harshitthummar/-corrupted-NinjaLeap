@@ -152,6 +152,7 @@ MonoBehaviour:
   numberofflashes: 0
   components:
   - {fileID: 7487606303631120662}
+  deathsound: {fileID: 8300000, guid: 6fa0a2629e5358b4199b4659005ce852, type: 3}
 --- !u!114 &7487606303631120662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,6 +173,7 @@ MonoBehaviour:
   playerlayer:
     serializedVersion: 2
     m_Bits: 1024
+  swordattack: {fileID: 8300000, guid: a78fbd93169a0b24fbd2d3b5ce77fc02, type: 3}
 --- !u!114 &1913979095060290809
 MonoBehaviour:
   m_ObjectHideFlags: 0

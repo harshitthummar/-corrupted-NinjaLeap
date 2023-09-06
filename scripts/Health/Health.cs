@@ -18,6 +18,9 @@ public class Health : MonoBehaviour
 
     [Header("Components")]
     [SerializeField] private Behaviour[] components;
+
+    [Header("Death Sounds")]
+    [SerializeField] private AudioClip deathsound;
     private void Awake()
     {
         currenthealth = startinghealth;
@@ -60,6 +63,7 @@ public class Health : MonoBehaviour
                     component.enabled = false;
                 }
                 dead = true;
+                soundmanager.instance.playsound(deathsound);
             }
             //player dead
             

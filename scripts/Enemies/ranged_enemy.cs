@@ -21,6 +21,9 @@ public class ranged_enemy : MonoBehaviour
     [SerializeField] private LayerMask playerlayer;
     private float cooldowntimer = Mathf.Infinity;
 
+    [Header("Sounds")]
+    [SerializeField] private AudioClip fireballsound;
+
     private Animator anim;
     private enemypetrol enemypetrol;
 
@@ -42,6 +45,7 @@ public class ranged_enemy : MonoBehaviour
                 //attack
                 cooldowntimer = 0;
                 anim.SetTrigger("rangeattack");
+                soundmanager.instance.playsound(fireballsound);
             }
         }
         //if you see the player stop petroling otherwise continue petroling

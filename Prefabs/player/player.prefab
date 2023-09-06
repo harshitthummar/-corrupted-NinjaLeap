@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cd45817a8423146b0c20f45ebc1598, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackcooldown: 0
+  attackcooldown: 0.3
   firepoint: {fileID: 1706527888352370041}
   fireballs:
   - {fileID: 0}
@@ -214,6 +214,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  fireballsound: {fileID: 8300000, guid: 9ed1bb456f9ac12469e7cd2b5ed4073e, type: 3}
 --- !u!95 &1706527888860383801
 Animator:
   serializedVersion: 5
@@ -252,3 +253,4 @@ MonoBehaviour:
   components:
   - {fileID: 1706527888860444102}
   - {fileID: 1706527888860383800}
+  deathsound: {fileID: 8300000, guid: 6fa0a2629e5358b4199b4659005ce852, type: 3}

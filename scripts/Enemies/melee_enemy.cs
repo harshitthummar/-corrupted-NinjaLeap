@@ -17,6 +17,9 @@ public class melee_enemy : MonoBehaviour
     [SerializeField] private LayerMask playerlayer;
     private float cooldowntimer = Mathf.Infinity;
 
+    [Header("Sounds Attack")]
+    [SerializeField] private AudioClip swordattack;
+
     //refrences
     private Health playerhealth;
     private Animator anim;
@@ -41,6 +44,7 @@ public class melee_enemy : MonoBehaviour
                 //attack
                 cooldowntimer = 0;
                 anim.SetTrigger("meleeattack");
+                soundmanager.instance.playsound(swordattack);
             }
         }
         //if you see the player stop petroling otherwise continue petroling
