@@ -10,13 +10,17 @@ public class arrowtrap : MonoBehaviour
     [SerializeField] private GameObject[] arrows;
     private float cooldown;
 
+    [Header("Arrow Sounds")]
+    [SerializeField] private AudioClip arrow;
+
+    
     private void attack()
     {
         cooldown = 0;
 
         arrows[findarrow()].transform.position = firepoint.position;
         arrows[findarrow()].GetComponent<enemyprojectile>().activateprojectile();
-
+        soundmanager.instance.playsound(arrow);
 
     }
 
@@ -34,7 +38,7 @@ public class arrowtrap : MonoBehaviour
     private void Update()
     {
         cooldown += Time.deltaTime;
-        if(cooldown >= attackcooldown)
+        if(cooldown >= attackcooldown )
         {
             attack();
         }

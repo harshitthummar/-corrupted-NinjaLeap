@@ -39,7 +39,7 @@ public class melee_enemy : MonoBehaviour
         if (playerinsight())
         {
             
-            if (cooldowntimer >= attackcooldown)
+            if (cooldowntimer >= attackcooldown && playerhealth.currenthealth>0)
             {
                 //attack
                 cooldowntimer = 0;

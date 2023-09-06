@@ -189,6 +189,7 @@ MonoBehaviour:
   walllayer:
     serializedVersion: 2
     m_Bits: 128
+  jump: {fileID: 8300000, guid: 1500ffc3d7fb0ac49bc27c796d65a52a, type: 3}
 --- !u!114 &1706527888860444102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,3 +255,4 @@ MonoBehaviour:
   - {fileID: 1706527888860444102}
   - {fileID: 1706527888860383800}
   deathsound: {fileID: 8300000, guid: 6fa0a2629e5358b4199b4659005ce852, type: 3}
+  hurtsound: {fileID: 8300000, guid: 77bfc2235339b664a9024c148f6dcfb0, type: 3}

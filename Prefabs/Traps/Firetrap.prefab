@@ -128,6 +128,7 @@ MonoBehaviour:
   activationdelay: 2
   activetime: 2
   damage: 0.1
+  fireon: {fileID: 8300000, guid: 8489e26e36f65d64b8a1d9f23cc8a979, type: 3}
 --- !u!95 &8188913504238055867
 Animator:
   serializedVersion: 5

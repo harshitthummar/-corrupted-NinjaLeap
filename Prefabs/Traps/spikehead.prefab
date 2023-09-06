@@ -153,3 +153,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   checkdelay: 1.5
+  impactspike: {fileID: 8300000, guid: d8dfbb9fbbdb3194ba1ddf84132e8c9b, type: 3}

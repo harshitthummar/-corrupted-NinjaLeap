@@ -21,6 +21,7 @@ public class Health : MonoBehaviour
 
     [Header("Death Sounds")]
     [SerializeField] private AudioClip deathsound;
+    [SerializeField] private AudioClip hurtsound;
     private void Awake()
     {
         currenthealth = startinghealth;
@@ -39,6 +40,7 @@ public class Health : MonoBehaviour
             //player damage
             anim.SetTrigger("hurt");
             StartCoroutine(invlnerability());
+            soundmanager.instance.playsound(hurtsound); 
         }
         else
         {

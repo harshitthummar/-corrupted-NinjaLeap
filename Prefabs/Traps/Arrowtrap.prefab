@@ -91,6 +91,7 @@ MonoBehaviour:
   - {fileID: 8576548673767290135}
   - {fileID: 8576548673633764560}
   - {fileID: 8576548674833822109}
+  arrow: {fileID: 8300000, guid: ec9e11895d8f5684393e985380edcc81, type: 3}
 --- !u!1 &6704307179450491114
 GameObject:
   m_ObjectHideFlags: 0

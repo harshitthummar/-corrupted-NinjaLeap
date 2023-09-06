@@ -26,11 +26,13 @@ public class ranged_enemy : MonoBehaviour
 
     private Animator anim;
     private enemypetrol enemypetrol;
+    
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         enemypetrol = GetComponentInParent<enemypetrol>();
+      
     }
     private void Update()
     {

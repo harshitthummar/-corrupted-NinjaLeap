@@ -14,6 +14,9 @@ public class playermovement : MonoBehaviour
     private Rigidbody2D body;
     private Animator anim;
     private BoxCollider2D boxCollider;
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip jump;
     private void Awake()
     {
         //get all values of player which has rigitbody2d and store it here with getcomponetnt()
@@ -61,6 +64,11 @@ public class playermovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Space))
             {
                 Jump();
+
+                if (Input.GetKeyDown(KeyCode.Space) && isgrounded()) 
+                {
+                    soundmanager.instance.playsound(jump);
+                }
             }
 
         }
@@ -78,7 +86,9 @@ public class playermovement : MonoBehaviour
         {
             body.velocity = new Vector2(body.velocity.x, jumppower);
             anim.SetTrigger("jump");
+            
         }
+
         else if(onwall() && !isgrounded())
         {
             if (horizontalinput == 0)

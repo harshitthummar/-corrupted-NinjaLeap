@@ -14,7 +14,8 @@ public class Firetrap : MonoBehaviour
     private bool active;
     private Health player;
 
-
+    [Header("Sound")]
+    [SerializeField] private AudioClip fireon;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -48,7 +49,7 @@ public class Firetrap : MonoBehaviour
         spiterend.color =Color.red;//when triggers it becomes red
       
         yield return new WaitForSeconds(activationdelay);
-
+        soundmanager.instance.playsound(fireon);
         active = true;
         anim.SetBool("activated", true);
         //now we activate our fire fire some seconds 
