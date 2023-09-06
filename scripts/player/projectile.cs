@@ -38,7 +38,7 @@ public class projectile : MonoBehaviour
         {
             collision.GetComponent<Health>().takedamage(1);
         }
-
+        
     }
 
     public void setdirection(float _direction)
